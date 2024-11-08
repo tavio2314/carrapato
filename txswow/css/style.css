@@ -1,0 +1,161 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3fffe; /* Cor de fundo bege claro */
+    color: #141414; /* Cor de texto escura para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura da tela inteira */
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Estilos para a tela inicial */
+.inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.inicio h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #d60000; /* Cor rosa para o título */
+}
+
+.inicio p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.imagem-inicial {
+    width: 200px;          /* Largura fixa de 200px */
+    max-width: 100%;       /* Garante que a imagem não ultrapasse a largura da tela */
+    height: auto;          /* Mantém a proporção da imagem */
+    margin-bottom: 20px;   /* Espaçamento abaixo da imagem */
+}
+
+#btnTempoJuntos {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #fa3333; /* Cor rosa para o botão */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnTempoJuntos:hover {
+    background-color: #ff0000; /* Cor mais escura ao passar o mouse */
+}
+
+/* Estilo da tela de transição com GIF */
+#transicaoTela {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center;     /* Alinha verticalmente */
+    height: 100vh; /* Altura total da tela (100% da altura da janela do navegador) */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+    position: absolute; /* Para que fique acima da tela inicial */
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#gifTransicao {
+    max-width: 90%;  /* Tamanho máximo do GIF em largura (ajuste conforme necessário) */
+    max-height: 90%; /* Tamanho máximo do GIF em altura (ajuste conforme necessário) */
+    object-fit: contain; /* Garante que o GIF mantenha a proporção */
+}
+
+/* Estilo da tela do contador */
+.contador {
+    display: flex; /* Ativa o Flexbox */
+    flex-direction: column; /* Organiza as caixas em uma coluna */
+    gap: 10px; /* Adiciona espaço entre as caixas */
+    align-items: center; /* Centraliza as caixas */
+    margin-top: 20px; /* Adiciona margem no topo */
+}
+
+/* Adicionando animação de entrada nas caixas */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8); /* Começa invisível e abaixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Fica visível e na posição final */
+    }
+}
+
+/* Estilo de cada caixa */
+.contador div {
+    background-color: #f52d2d; /* Cor de fundo rosa */
+    color: white; /* Texto branco */
+    padding: 5px 10px; /* Menor espaçamento interno */
+    font-size: 18px; /* Tamanho de fonte para o texto */
+    font-weight: bold;
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 170px; /* Largura maior, esticada para a direita */
+    height: 40px; /* Altura menor das caixas */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Efeito de transição suave */
+    word-wrap: break-word; /* Garante que o texto quebrará e se ajustará dentro da caixa */
+    overflow: hidden; /* Impede que o texto transborde */
+
+    display: flex; /* Flexbox para organizar o conteúdo dentro da caixa */
+    justify-content: space-between; /* Espaça o texto e o número */
+    align-items: center; /* Alinha os itens (texto e número) ao centro */
+    animation: fadeInUp 0.6s ease-out forwards; /* Aplica a animação */
+    opacity: 0; /* Começa invisível até a animação rodar */
+}
+
+/* Ajuste para os rótulos (texto) */
+.contador div span.texto {
+    font-size: 14px; /* Ajusta o tamanho do texto */
+    margin-right: 5px; /* Adiciona um pequeno espaçamento à direita */
+}
+
+/* Ajuste para os números */
+.contador div span.numero {
+    font-size: 22px; /* Tamanho maior para o número */
+    font-weight: bold; /* Deixa o número mais destacado */
+}
+
+    /* Estilo para o GIF na tela do contador */
+.gif-container {
+    margin-bottom: 20px; /* Adiciona espaço entre o GIF e as caixas do contador */
+    display: flex;
+    justify-content: center; /* Centraliza o GIF horizontalmente */
+    align-items: center;     /* Centraliza o GIF verticalmente */
+    width: 100%; /* Garante que o GIF ocupe toda a largura disponível */
+}
+
+#gifContador {
+    max-width: 100px; /* Tamanho máximo do GIF, ajustável conforme necessário */
+    width: 100%; /* O GIF pode se ajustar à largura da tela */
+    height: auto; /* Mantém a proporção original */
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+    .contador div {
+        width: 80%; /* As unidades de tempo ocupam toda a largura disponível em telas pequenas */
+        font-size: 14px;
+        height: 35px; /* Ajusta a altura para telas pequenas */
+    }
+
+}

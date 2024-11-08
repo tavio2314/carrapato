@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrapato</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Linkando o CSS externo -->
+</head>
+<body>
+
+    <!-- Tela inicial com o botão -->
+    <div class="inicio" id="inicioTela">
+        <h1>Tavin e Sofi</h1>
+        <img src="imagens/desenho.png" alt="Imagem de Bem-vindo" class="imagem-inicial"> <!-- Imagem acima do botão -->
+        <button id="btnTempoJuntos">Tempo Juntos</button>
+    </div>
+
+    <!-- Tela de transição com o GIF -->
+    <div class="transicao" id="transicaoTela" style="display: none;">
+        <img src="imagens/animacao.gif" alt="Transição de Animação" id="gifTransicao">
+    </div>
+
+   <!-- Tela do contador -->
+<div class="container" id="contadorTela" style="display:none;">
+    <h1>Tavin e Sofi</h1>
+    <p>Estamos juntos há:</p>
+    
+    <!-- Adicionando o GIF acima das caixas -->
+    <div class="gif-container">
+        <img src="imagens/tonyecountry.gif" alt="GIF de Transição" id="gifContador">
+    </div>
+
+    <div class="contador" id="contador">
+        <div id="anos">
+            <span class="texto">anos</span>
+            <span class="numero">00</span>
+        </div>
+        <div id="meses">
+            <span class="texto">meses</span>
+            <span class="numero">00</span>
+        </div>
+        <div id="dias">
+            <span class="texto">dias</span>
+            <span class="numero">00</span>
+        </div>
+        <div id="horas">
+            <span class="texto">horas</span>
+            <span class="numero">00</span>
+        </div>
+        <div id="minutos">
+            <span class="texto">minutos</span>
+            <span class="numero">00</span>
+        </div>
+        <div id="segundos">
+            <span class="texto">segundos</span>
+            <span class="numero">00</span>
+        </div>
+    </div>
+</div>
+
+    <!-- Linkando o JavaScript externo -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
